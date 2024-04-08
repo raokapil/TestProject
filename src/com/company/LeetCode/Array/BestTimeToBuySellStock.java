@@ -12,9 +12,24 @@ public class BestTimeToBuySellStock {
         return maxProfit;
     }
 
+
+    public static int maxProfitOpt(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        for (int price : prices) {
+            minPrice = Math.min(minPrice, price); // Update min price seen so far
+            maxProfit = Math.max(maxProfit, price - minPrice); // Update max profit based on current price and min price
+        }
+
+        return maxProfit;
+    }
+
     public static void main(String[] args) {
         int[] prices = {7, 1, 5, 3, 6, 4};
         int maxProfit = maxProfit(prices);
-        System.out.println("Maximum profit possible: " + maxProfit);
+
+        int maxProfitOpt = maxProfitOpt(prices);
+        System.out.println("Maximum profit possible: " + maxProfit + ", maxProfitOpt : " + maxProfitOpt);
     }
 }

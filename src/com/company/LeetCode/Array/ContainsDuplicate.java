@@ -24,6 +24,18 @@ public class ContainsDuplicate {
         return false;
     }
 
+    public static void printDuplicates(int[] arr) {
+        Set<Integer> seen = new HashSet<>();
+        System.out.println("Duplicate elements:");
+        for (int num : arr) {
+            if (seen.contains(num)) {
+                System.out.print(num + " ");
+            } else {
+                seen.add(num);
+            }
+        }
+    }
+
     private static boolean containsDuplicate(int[] nums) {
 
         for (int i = 0; i < nums.length; i++) {
