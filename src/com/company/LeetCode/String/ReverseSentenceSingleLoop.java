@@ -1,4 +1,4 @@
-package com.company.LeetCode.Array;
+package com.company.LeetCode.String;
 
 public class ReverseSentenceSingleLoop {
     public static String reverseSentence(String sentence) {
